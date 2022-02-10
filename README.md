@@ -1,7 +1,7 @@
 # Adesso-task 
 ___
 
-After you start project, you can use swagger-ui to test end-point.
+* After you start project, you can use swagger-ui to test end-point.
 
 ## Swagger UI
 ```shell script
