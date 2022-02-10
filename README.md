@@ -1,10 +1,29 @@
-# Adesso-task Project
+# Adesso-task 
+___
+
+###After you start project, you can use swagger-ui to test end-point.
 
 ## Swagger UI
 ```shell script
 localhost:8080/swagger-ui
 ```
 
+## Example Usage of Swagger
+
+Use Country Codes Alpha-2 format for country input. https://earthquake.usgs.gov/fdsnws/event/1/ api returns locations of earthquakes from following parameters: 
+ - latitude & longitude & maxradius/ maxradiuskm.
+
+Thus, I define countries in Enums like: https://developers.google.com/public-data/docs/canonical/countries_csv.
+
+ - Default value of 'maxradius' is '5'.(in src/main/java/com.adessotask/service/EarthquakeService). To distinct "No Earthquakes were recorded past {x} days" message more easily.
+
+
+#### Example  GET /earthquakes values:
+```shell script
+country: "US"
+days: "10"
+```
+___
 ## Running the JVM docker image:
 
 ```shell script
