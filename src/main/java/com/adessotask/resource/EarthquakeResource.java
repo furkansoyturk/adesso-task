@@ -7,6 +7,7 @@ import org.jboss.resteasy.annotations.jaxrs.QueryParam;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.*;
@@ -19,12 +20,14 @@ public class EarthquakeResource {
     EarthquakeService earthquakeService;
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getEarthquakes(@QueryParam("country") String country, @QueryParam("days") int days) throws IOException {
         List<UsgsApiEarthquake> usgsApiEarthquakes = earthquakeService.fetchEarthquakes(country.toUpperCase(), days);
 
         EarthquakeResponse response = new EarthquakeResponse(usgsApiEarthquakes);
         if(response.usgsApiEarthquakeList.size() == 0) {
-            return Response.ok("No Earthquakes were recorded past " + days + " days").build();
+            String errorMsg = "No Earthquakes were recorded past " + days + " days";
+            return Response.ok(errorMsg).build();
         } else {
             return Response.ok(response).build();
         }

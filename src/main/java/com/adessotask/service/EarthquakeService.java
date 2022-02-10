@@ -54,17 +54,14 @@ public class EarthquakeService {
         System.out.println(request);
         Response response = client.newCall(request).execute();
 
-        try {
-            usgsApiResponseMapper(response, country);
-        } catch (Exception e) {
-            return new ArrayList<UsgsApiEarthquake>();
-        }
         return usgsApiResponseMapper(response, country);
 
     }
 
     private List<UsgsApiEarthquake> usgsApiResponseMapper(Response response, String country) throws IOException {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .serializeNulls()
+                .create();
         JsonParser jsonParser = new JsonParser();
 
         JsonObject jo = (JsonObject)jsonParser.parse(response.body().string());

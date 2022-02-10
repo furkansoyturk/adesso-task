@@ -1,13 +1,28 @@
-# task Project
+# Adesso-task Project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## Swagger UI
+```shell script
+localhost:8080/swagger-ui
+```
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+## Running the JVM docker image:
+
+```shell script
+ ./mvnw package
+```
+ Then, build the image with:
+
+```shell script
+ docker build -f src/main/docker/Dockerfile.jvm -t quarkus/task-jvm .
+```
+
+ Then run the container using:
+
+```shell script
+ docker run -i --rm -p 8080:8080 quarkus/task-jvm
+```
 
 ## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-
 ```shell script
 ./mvnw compile quarkus:dev
 ```
@@ -49,18 +64,4 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 ./mvnw package -Pnative -Dquarkus.native.container-build=true
 ```
 
-You can then execute your native executable with: `./target/task-1.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Related Guides
-
-- RESTEasy JAX-RS ([guide](https://quarkus.io/guides/rest-json)): REST endpoint framework implementing JAX-RS and more
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+You can then execute your native executable with: `./target/adesso-task-1.0-SNAPSHOT-runner`

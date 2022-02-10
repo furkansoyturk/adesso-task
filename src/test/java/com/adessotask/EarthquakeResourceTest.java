@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 @QuarkusTest
 public class EarthquakeResourceTest {
 
-    @Inject
+    /*@Inject
     EarthquakeService earthquakeService;
 
     @Test
@@ -59,5 +59,5 @@ public class EarthquakeResourceTest {
     @Test
     public void testService() throws IOException {
         //earthquakeService("TR",2);
-    }
+    }*/
 }
