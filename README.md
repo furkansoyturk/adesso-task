@@ -15,7 +15,7 @@ Use Country Codes Alpha-2 format for country input. https://earthquake.usgs.gov/
 
 Thus, I define countries in Enums like: https://developers.google.com/public-data/docs/canonical/countries_csv.
 
- - Default value of 'maxradius' is '5'.(in src/main/java/com.adessotask/service/EarthquakeService). To distinct "No Earthquakes were recorded past {x} days" message more easily.
+ - Default value of 'maxradius' is '5'(in src/main/java/com.adessotask/service/EarthquakeService). To distinct "No Earthquakes were recorded past {x} days" message more easily.
 
 
 #### Example  GET /earthquakes values:
