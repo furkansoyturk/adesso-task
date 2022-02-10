@@ -10,7 +10,7 @@ localhost:8080/swagger-ui
 
 ## Example Usage of Swagger
 
-Use Country Codes Alpha-2 format for country input. https://earthquake.usgs.gov/fdsnws/event/1/ api returns locations of earthquakes from following parameters: 
+Use Country Codes Alpha-2 format for country input. https://earthquake.usgs.gov/fdsnws/event/1/ api returns locations of earthquakes according to following parameters: 
  - latitude & longitude & maxradius/ maxradiuskm.
 
 Thus, I define countries in Enums like: https://developers.google.com/public-data/docs/canonical/countries_csv.
